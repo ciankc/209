@@ -20,6 +20,7 @@ We will use OpenSHS to simulate a smart home with multiple passive infrared (PIR
 
 ### Prior Work
 
+A 2020 paper from UCSB [2] uses ambient WiFi signals to detect humans. This is passive sensing, and no prior knowledge of the WiFi network or devices (including location) is needed. Detection rates varied from 86.6-99.9% depending on the number of anchors. Additionally, work has been done to develop new signal processing algorithms for Ambient Assisted Living Applications (AAL) [1]. In this case, time spent in active state by the sensor signal as the best indication of movement intensity. 
 
 .
 .
