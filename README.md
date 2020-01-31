@@ -5,6 +5,9 @@ Cian Costello, Andrew Chen, Mrunal Patel
 
 ### Abstract 
 
+### Proposal
+We will use OpenSHS to simulate a smart home with multiple passive infrared (PIR) sensors. Data collected will be based on an actor or actors that will move throughout the home. Time stamped data from the motion sensors will be used to infer sensor locations, recognize human activity patterns, and determine the number of occupants. We will experiment with different models to predict the above metrics -- Kalman filters, particle filters, and/or Hidden Markov models.
+
 ### Project Timeline
 
 * Week 4 - Project definition and abstract, literature review complete
