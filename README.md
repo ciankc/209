@@ -29,7 +29,7 @@ Cian Costello, Andrew Chen, Mrunal Patel
 
 1) [Passive infrared motion sensors signal processing for Ambient Assisted Living Applications](https://ieeexplore.ieee.org/abstract/document/6229464)
 
-2) [Et tu Alexa, passive wifi sensing for localization)(https://arxiv.org/pdf/1810.10109.pdf)
+2) [Et tu Alexa, passive wifi sensing for localization](https://arxiv.org/pdf/1810.10109.pdf)
 
 3) [Surveillance tracking using PIR sensors](https://ieeexplore.ieee.org/abstract/document/4472790)
 
