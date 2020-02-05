@@ -5,7 +5,10 @@ Cian Costello, Andrew Chen, Mrunal Patel
 
 ### Abstract 
 
+Motion sensors have been used commonly in large buildings. There have been developments for using motion sensors in assisted living situations for the elderly. We present a novel approach to detect sensor locations, behavioral patterns of occupants and other details, such as the number of occupants. Using a smart home simulator, we train a model to detect the relevant actions. The applications of this model vary from using it to detect anomalies in the behavior of the elderly and alert caretakers of falls to a more malicious nature where an attacker can learn about the living patterns of the residents.
+
 ### Proposal
+
 We will use OpenSHS to simulate a smart home with multiple passive infrared (PIR) sensors. Data collected will be based on an actor or actors that will move throughout the home. Time stamped data from the motion sensors will be used to infer sensor locations, recognize human activity patterns, and determine the number of occupants. We will experiment with different models to predict the above metrics -- Kalman filters, particle filters, and/or Hidden Markov models.
 
 ### Project Timeline
@@ -27,6 +30,9 @@ A 2020 paper from UCSB [2] uses ambient WiFi signals to detect humans. This is p
 .
 
 
+A 2017 paper by Luo et al. [5] uses PIR sensors for simultaneous indoor tracking and activity recognition. The paper involves an active setup of groups of sensors on the roof. Each group is arranged in a special way such that the subject can be tracked using bearing and radial segmentation. They use a particle filter to determine the location of the human target. Lastly, they have a two-layer random forest to classify the activity that the human target is performing. They can determine static actions with an accuracy of over 90% (mobile actions were between 60 and 70%).
+
+Another related work on fall detection makes the case for PIR sensors to be used as an alternative to cameras [6]. Since they capture much less detail and information they are inherently more privacy preserving than cameras, not to mention cheaper. They also use roof based sensors, where each sensor is a "pixel" and these pixels are passed to a SVM based classifier and they obtained an average recognition rate of 80%.
 
 
 ### References
