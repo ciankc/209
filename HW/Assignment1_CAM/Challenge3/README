@@ -1,0 +1,25 @@
+
+NOTES: 
+
+generate-binary-file.sh and test-firmware-update.sh have been modified
+
+Required programs and libraries:
+gpg 
+libgpgme or libgpgme-dev
+
+
+RUN INSTRUCTIONS:
+
+1) Add private key to GPG Keychain
+
+	gpg --allow-secret-key-import --import private.key
+
+2) Generate the binary file
+	
+	bash generate-binary-file.sh
+
+2) Test it
+	
+	bash test-firmware-update.sh
+
+
