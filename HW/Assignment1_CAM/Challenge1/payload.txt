@@ -1,0 +1,14 @@
+Get location: IJUHDNE852
+Move in x direction: IJUHDNE852$$$$$$[left/right] [2.0]
+Move in y direction: IJUHDNE852$$$$$$[forward/back] [2.0]
+
+
+examples of commands entered on web interface: 
+IJUHDNE852
+IJUHDNE852$$$$$$left 2
+IJUHDNE852$$$$$$forward 2
+
+
+IJUHDNE852
+IJUHDNE852$$$$$$right 2
+IJUHDNE852$$$$$$back 2
