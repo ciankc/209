@@ -14,10 +14,15 @@ import itertools
 from random import randrange, choice
 
 CONTEXTS = IndexedOrderedDict()
-CONTEXTS['morning'] = {'exe': 'blender/morning.blend',
-                         'start_dt': datetime.strptime("2016-02-01 08:00:00", "%Y-%m-%d %H:%M:%S")}
-CONTEXTS['evening'] = {'exe': 'blender/evening.blend',
-                         'start_dt': datetime.strptime("2016-02-01 18:00:00", "%Y-%m-%d %H:%M:%S")}
+# CONTEXTS['morning'] = {'exe': 'blender/morning.blend',
+#                          'start_dt': datetime.strptime("2016-02-01 08:00:00", "%Y-%m-%d %H:%M:%S")}
+# CONTEXTS['evening'] = {'exe': 'blender/evening.blend',
+#                          'start_dt': datetime.strptime("2016-02-01 18:00:00", "%Y-%m-%d %H:%M:%S")}
+CONTEXTS['inside'] = {'exe': 'blender/smarthome.blend',
+                         'start_dt': datetime.strptime("2020-03-01 12:00:00", "%Y-%m-%d %H:%M:%S")}
+CONTEXTS['outside'] = {'exe': 'blender/smarthome2.blend',
+                         'start_dt': datetime.strptime("2020-03-01 04:20:00", "%Y-%m-%d %H:%M:%S")}
+
 
 def validate_dt(value):
     try:
