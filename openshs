@@ -18,9 +18,11 @@ CONTEXTS = IndexedOrderedDict()
 #                          'start_dt': datetime.strptime("2016-02-01 08:00:00", "%Y-%m-%d %H:%M:%S")}
 # CONTEXTS['evening'] = {'exe': 'blender/evening.blend',
 #                          'start_dt': datetime.strptime("2016-02-01 18:00:00", "%Y-%m-%d %H:%M:%S")}
-CONTEXTS['inside'] = {'exe': 'blender/smarthome.blend',
+CONTEXTS['inside'] = {'exe': 'blender/smarthome_in.blend',
                          'start_dt': datetime.strptime("2020-03-01 12:00:00", "%Y-%m-%d %H:%M:%S")}
-CONTEXTS['outside'] = {'exe': 'blender/smarthome2.blend',
+CONTEXTS['outside'] = {'exe': 'blender/smarthome_out.blend',
+                         'start_dt': datetime.strptime("2020-03-01 04:20:00", "%Y-%m-%d %H:%M:%S")}
+CONTEXTS['2bed'] = {'exe': 'blender/smarthome2.blend',
                          'start_dt': datetime.strptime("2020-03-01 04:20:00", "%Y-%m-%d %H:%M:%S")}
 
 
