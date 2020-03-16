@@ -5,11 +5,16 @@ rooms = ["officeCarp","livingCarp","kitchenCarp","bedroomCarp","bathroomCarp"]
 activity_cols = ["Activity"]
 time_cols = ["Time","timestamp"]
 
+INFERENCE = False
+prefix = ""
+if INFERENCE:
+    prefix = "inf-"
+
 for room in rooms:
     fieldnames = list(time_cols)
     fieldnames.insert(0, room)   
 
-    result = open(room+".csv", "w")
+    result = open(prefix + room + ".csv", "w")
     csvwr = csv.DictWriter(result, fieldnames=fieldnames)
     csvwr.writeheader()
 
