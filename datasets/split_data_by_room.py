@@ -1,9 +1,11 @@
 import sys
 import csv
+import time
 
-rooms = ["officeCarp","livingCarp","kitchenCarp","bedroomCarp","bathroomCarp"]
+rooms = ["officeCarp","hallwayCarp","livingCarp","kitchenCarp","bedroomCarp","bathroomCarp"]
 activity_cols = ["Activity"]
-time_cols = ["Time","timestamp"]
+# time_cols = ["Time","timestamp"]
+time_cols = ["Time"]
 
 INFERENCE = False
 prefix = ""
@@ -23,7 +25,7 @@ for room in rooms:
         csvdr = csv.DictReader(nextfile)
         for row in csvdr:
             data = {}
-            for field in fieldnames:
-                data[field] = row[field]
+            data[room] = row[room]
+            data['Time'] = int(time.mktime(time.strptime(row['Time'], "%Y-%m-%d %H:%M:%S")))
             csvwr.writerow(data)
 
