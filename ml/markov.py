@@ -81,5 +81,22 @@ class RoomMarkov():
         # print(two_step)
 
     def get_top_two(self, srcRoom):
-       row = self.two_step[srcRoom]
-       print(row)
+        row = self.two_step[srcRoom]
+        m, mi = -1, -1
+        sm, smi = -1, -1
+        for i in range(len(row)):
+            if row[i] > m:
+                sm = m
+                smi = mi
+                m = row[i]
+                mi = i
+            elif row[i] > sm and sm < m:
+                sm = row[i]
+                smi = i
+        
+        # print(row)
+        # print(m)
+        # print(mi)
+        # print(sm)
+        # print(smi)
+        return m, mi, sm, smi
