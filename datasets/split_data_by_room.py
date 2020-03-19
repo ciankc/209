@@ -2,21 +2,21 @@ import sys
 import csv
 import time
 
-rooms = ["officeCarp","hallwayCarp","livingCarp","kitchenCarp","bedroomCarp","bathroomCarp"]
-activity_cols = ["Activity"]
-# time_cols = ["Time","timestamp"]
-time_cols = ["Time"]
+rooms = ['officeCarp','hallwayCarp','livingCarp','kitchenCarp','bedroomCarp','bathroomCarp']
+activity_cols = ['Activity']
+# time_cols = ['Time','timestamp']
+time_cols = ['Time']
 
 INFERENCE = False
-prefix = ""
+prefix = ''
 if INFERENCE:
-    prefix = "inf-"
+    prefix = 'inf-'
 
 for room in rooms:
     fieldnames = list(time_cols)
     fieldnames.insert(0, room)   
 
-    result = open(prefix + room + ".csv", "w")
+    result = open(prefix + room + '.csv', 'w')
     csvwr = csv.DictWriter(result, fieldnames=fieldnames)
     csvwr.writeheader()
 
@@ -26,6 +26,6 @@ for room in rooms:
         for row in csvdr:
             data = {}
             data[room] = row[room]
-            data['Time'] = int(time.mktime(time.strptime(row['Time'], "%Y-%m-%d %H:%M:%S")))
+            data['Time'] = int(time.mktime(time.strptime(row['Time'], '%Y-%m-%d %H:%M:%S')))
             csvwr.writerow(data)
 
