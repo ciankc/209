@@ -1,11 +1,11 @@
 import sys
 import csv
-import time
+from datetime import datetime
 
 rooms = ['officeCarp','hallwayCarp','livingCarp','kitchenCarp','bedroomCarp','bathroomCarp']
 activity_cols = ['Activity']
 # time_cols = ['Time','timestamp']
-time_cols = ['Time']
+time_cols = ['timestamp']
 
 INFERENCE = False
 prefix = ''
@@ -26,6 +26,8 @@ for room in rooms:
         for row in csvdr:
             data = {}
             data[room] = row[room]
-            data['Time'] = int(time.mktime(time.strptime(row['Time'], '%Y-%m-%d %H:%M:%S')))
+            t = datetime.strptime(row['timestamp'], '%Y-%m-%d %H:%M:%S')
+            t_int = t.hour * 3600 + t.minute * 60 + t.second
+            data['timestamp'] = t_int
             csvwr.writerow(data)
 
