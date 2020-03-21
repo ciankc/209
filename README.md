@@ -59,6 +59,7 @@ To process of collecting data works as follows:
 After a sufficient number of data samples was collected, we were able to use the aggregate feature of OpenSHS to expand our samples into a larger dataset. A replication algorithm is used that randomly draws from our manually collected samples. These samples are sorted based on their activity labeling and aggregated based on the number of activities in each sample. So in order for the aggregate function to be effective, we had to ensure that our manual data was properly labelled. The use of labels helps preserve the logical order of events and create more realistic sensor traces. The aggregate algorithm has options to set the number of days generated, the starting date, the start time variability, and the activity length variability.
 
 ### Random Forests
+We decided to use the Random Forest classification algorithm to figure out if at a given timestamp is a room's sensor on or off. We used the random forest because it is an easy model to train and does not require a lot of data unlike a deep learning model such as LSTM. The data set we collected was separated by rooms and each room was represented by a different model. The reason for this was to reduce the interferece between rooms that might be on at the same time and also the fact that each room could be queried independently. The model was designed to take a unix timestamp as an input and classify that timestamp as either "sensor is on" or "sensor is off". 
 
 ### Markov Chain
 To predict transitions from room to room, we began by trying a Hidden Markov Model for traversing through the house. But after studying the model, we found that this would not be properly suited for our problem since there is no concept of unobservable, or hidden, states. We then had to try a different approach.
@@ -66,6 +67,11 @@ To predict transitions from room to room, we began by trying a Hidden Markov Mod
 It turned out that we could use a Markov chain representation for predicting room (state) transitions. With our dataset collected from OpenSHS, we evaluate transition likelihoods. This was done by counting pairs of state changes and calculating the probabilities of all possible transitions. The end result is a transition matrix, used to determine the probability of moving from one room to another. Our application only used this one-step probability, although multiplying this matrix by itself would provide a matrix of two-step probabilities, which are the likelihoods of moving from one room to another in two steps. We follow this logic further to consider N-step transitions, but prediting transitions too far in advance increases uncertainty and would not be as applicable to our problem.
 
 ### Pipeline
+The pipeline we implemented to streamline the process was written in python. It is as follows:
+1. Ask user for input timestamp
+2. Query random forests for the candidate rooms (all rooms are candidates for the very first run)
+3. Query markov model for the candidate next rooms based on current room returned by random forest
+4. Go to step 1
 
 ### Results and Evaluation
 Below are images of the ROC-AUC curves for our random forests. These are a good metric for evaluating the performance of our model, and show that the predictions outperform at least the baseline.
