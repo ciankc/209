@@ -65,16 +65,20 @@ After a sufficient number of data samples was collected, we were able to use the
 ### Pipeline
 
 ### Results and Evaluation
-![bath](figures/bath.png) ![bed](figures/bed.png)
+Below are images of the ROC-AUC curves for our random forests. These are a good metric for evaluating the performance of our model, and show that the predictions outperform at least the baseline.
 
-![kitch](figures/kit.png) ![living](figures/living.png)
-
+![bath](figures/bath.png) 
+![bed](figures/bed.png)
+![kitch](figures/kit.png) 
+![living](figures/living.png)
 ![office](figures/office.png)
-
 
 ### Limitations and Future Directions
 One key limitation with this implementation is the lack of support and limited documentation for OpenSHS. The simulator does function, but it was last updated in 2018. Additionally, the most recent version of Blender discontinued the use of the Blender Game Engine, which is required for performing these simulations. Version 2.79 of Blender still supports the game engine. 
 
+An area of future work for this project would be extending the room tracking to multiple users. This would require future development of the OpenSHS framework to better support two actors. A simple way to achieve this would be rerunning simulations that overlap in time and combine their data outputs. This would produce a sensor trace for a multi-occupant home, to which we could apply our models. In terms of data collection, we could improve the automation of the OpenSHS process. Blender also supports other types of motion sensors, such as the Near and Radar sensors. These could make the data more realistic and add some uncertainty to our measurements. 
+
+Deep learning methods, such as LSTM networks, were briefly considered at the start of this project. Due to the limited data and few features, we did not experiment with such methods. But with modifications to the problem, utilizing some form of memory could be useful to gain new insights on occupant behavior. This could be an avenue for future work.
 
 ### References
 
