@@ -65,13 +65,9 @@ After a sufficient number of data samples was collected, we were able to use the
 ### Pipeline
 
 ### Results and Evaluation
-![bath](figures/bath.png)
+![bath](figures/bath.png) ![bed](figures/bed.png)
 
-![bed](figures/bed.png)
-
-![kitch](figures/kit.png)
-
-![living](figures/living.png)
+![kitch](figures/kit.png) ![living](figures/living.png)
 
 ![office](figures/office.png)
 
