@@ -74,13 +74,21 @@ The pipeline we implemented to streamline the process was written in python. It 
 4. Go to step 1
 
 ### Results and Evaluation
-Below are images of the ROC-AUC curves for our random forests. These are a good metric for evaluating the performance of our model, and show that the predictions outperform at least the baseline.
+Below are images of the ROC-AUC curves for our random forests (bathroom, bedroom, kitchen, living room, and office). These are a good metric for evaluating the performance of our model, and show that the predictions outperform at least the baseline.
 
 ![bath](figures/bath.png) 
 ![bed](figures/bed.png)
 ![kitch](figures/kit.png) 
 ![living](figures/living.png)
 ![office](figures/office.png)
+
+Next are the confusion matrices. These provide details on the absolute values of results and classifications. Most of the information in these figures is contained in the OFF states, which is expected since motion sensors are only occasionally triggered.
+
+![bath](figures/bath_mat.png) 
+![bed](figures/bed_mat.png)
+![kitch](figures/kit_mat.png) 
+![living](figures/living_mat.png)
+![office](figures/office_mat.png)
 
 ### Limitations and Future Directions
 One key limitation with this implementation is the lack of support and limited documentation for OpenSHS. The simulator does function, but it was last updated in 2018. Additionally, the most recent version of Blender discontinued the use of the Blender Game Engine, which is required for performing these simulations. Version 2.79 of Blender still supports the game engine. 
