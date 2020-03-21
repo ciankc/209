@@ -3,42 +3,40 @@ from ml.markov import RoomMarkov
 
 rf = RoomRF()
 markov = RoomMarkov()
-rf.evaluate_model()
 
 room_to_int = {
     'officeCarp': 0,
-    'livingCarp': 1,
-    'kitchenCarp': 2,
-    'bedroomCarp': 3, 
-    'bathroomCarp': 4
+    'hallwayCarp': 1,
+    'livingCarp': 2,
+    'kitchenCarp': 3,
+    'bedroomCarp': 4, 
+    'bathroomCarp': 5
 }
 
 int_to_room = {
     0: 'officeCarp',
-    1: 'livingCarp',
-    2: 'kitchenCarp',
-    3: 'bedroomCarp',
-    4: 'bathroomCarp'
+    1: 'hallwayCarp',
+    2: 'livingCarp',
+    3: 'kitchenCarp',
+    4: 'bedroomCarp',
+    5: 'bathroomCarp'
 }
 
-# 1583383222
-t = 1583383222 % 86400
-# pred, prob, i = rf.get_room(t, ['officeCarp', 'kitchenCarp'])
-pred, prob, i = rf.get_room(t)
+rooms = ['officeCarp', 'hallwayCarp','livingCarp','kitchenCarp','bedroomCarp','bathroomCarp']
 
-print((pred, prob, int_to_room[i]))
+print('\n\n')
 
-print("============ LOADING MARKOV ==============")
+while True:
+    tin = input("Please enter a unix time stamp (eg. 1583383222): ")
+    t = int(tin)
+    pred, prob, i = rf.get_room(t, rooms)
+    print("=========== RF result =============")
+    print((pred, prob, int_to_room[i]))
+    print("========== MARKOV result ==========")
+    aProb, roomA, bProb, roomB = markov.get_top_two(i)
+    print((int_to_room[roomA], aProb, int_to_room[roomB], bProb))
+    rooms = [int_to_room[roomA], int_to_room[roomB]]
 
-
-aProb, roomA, bProb, roomB = markov.get_top_two(i)
-
-print((int_to_room[roomA], aProb, int_to_room[roomB], bProb))
-
-print("============ LOADING MARKOV ==============")
-
-# train all the random forests
-# train the morkov model
 
 # get the initial room by querying all the random forests
 # get request from user and get potential rooms from markov models

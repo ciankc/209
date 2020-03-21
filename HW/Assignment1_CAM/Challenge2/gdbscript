@@ -1,8 +1,0 @@
-set logging off
-break *0x400ae2
-run lee_position_controller_node.cpp.o
-nexti
-set $eax = 1
-continue
-quit
-
