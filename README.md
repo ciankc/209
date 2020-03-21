@@ -61,6 +61,9 @@ After a sufficient number of data samples was collected, we were able to use the
 ### Random Forests
 
 ### Markov Chain
+To predict transitions from room to room, we began by trying a Hidden Markov Model for traversing through the house. But after studying the model, we found that this would not be properly suited for our problem since there is no concept of unobservable, or hidden, states. We then had to try a different approach.
+
+It turned out that we could use a Markov chain representation for predicting room (state) transitions. With our dataset collected from OpenSHS, we evaluate transition likelihoods. This was done by counting pairs of state changes and calculating the probabilities of all possible transitions. The end result is a transition matrix, used to determine the probability of moving from one room to another. Our application only used this one-step probability, although multiplying this matrix by itself would provide a matrix of two-step probabilities, which are the likelihoods of moving from one room to another in two steps. We follow this logic further to consider N-step transitions, but prediting transitions too far in advance increases uncertainty and would not be as applicable to our problem.
 
 ### Pipeline
 
