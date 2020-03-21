@@ -65,15 +65,15 @@ After a sufficient number of data samples was collected, we were able to use the
 ### Pipeline
 
 ### Results and Evaluation
-![bath](https://github.com/ciankc/209/figures/bath.png)
+![bath](https://github.com/ciankc/209/tree/master/figures/bath.png "Name")
 
-![bed](https://github.com/ciankc/209/figures/bed.png)
+![bed](https://github.com/ciankc/209/tree/master/figures/bed.png)
 
-![kitch](https://github.com/ciankc/209/figures/kit.png)
+![kitch](https://github.com/ciankc/209/tree/master/figures/kit.png)
 
-![living](https://github.com/ciankc/209/figures/living.png)
+![living](https://github.com/ciankc/209/tree/master/figures/living.png)
 
-![office](https://github.com/ciankc/209/figures/office.png)
+![office](https://github.com/ciankc/209/tree/master/figures/office.png)
 
 
 ### Limitations and Future Directions
