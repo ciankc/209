@@ -20,18 +20,14 @@ We will use OpenSHS to simulate a smart home with multiple passive infrared (PIR
 * Week 10 - Finalize presentation and project report
 
 ### Prior Work
-Our initial literature review focused on passive infrared (PIR) motion sensors, and their usage in human tracking applications.
-
-Song et al. [1] use PIR sensors to perform region based human tracking. Six sensors placed around the ceiling of an office building are used to track the movement of a single person, with regions defined by sensor range and overlaps. Zappi et al. [2] demonstrate that more precise information can be derived from pairs of PIR sensors facing each other, by using feature extraction with simple supervised learning algorithms to classify movements of people.
+Our initial literature review focused on passive infrared (PIR) motion sensors, and their usage in human tracking applications. Song et al. [1] use PIR sensors to perform region based human tracking. Six sensors placed around the ceiling of an office building are used to track the movement of a single person, with regions defined by sensor range and overlaps. Zappi et al. [2] demonstrate that more precise information can be derived from pairs of PIR sensors facing each other, by using feature extraction with simple supervised learning algorithms to classify movements of people.
 
 A 2017 paper by Luo et al. [3] uses PIR sensors for simultaneous indoor tracking and activity recognition. The paper involves an active setup of groups of sensors on the roof. Each group is arranged in a special way such that the subject can be tracked using bearing and radial segmentation. They use a particle filter to determine the location of the human target. Lastly, they have a two-layer random forest to classify the activity that the human target is performing. They can determine static actions with an accuracy of over 90% (mobile actions were between 60 and 70%).
 
-Another related work on fall detection makes the case for PIR sensors to be used as an alternative to cameras [4]. Since they capture much less detail and information they are inherently more privacy preserving than cameras, not to mention cheaper. They also use roof based sensors, where each sensor is a "pixel" and these pixels are passed to a SVM based classifier and they obtained an average recognition rate of 80%.
+Another related work on fall detection makes the case for PIR sensors to be used as an alternative to cameras [4]. Motion sensors, already cheaper than cameras, capture much less detail and information making them inherently better at preserving privacy. They also use roof-based sensors, where each sensor is a "pixel" that gets passed into an SVM classifier to obtain an average recognition rate of 80%.
 
 ---
-A more relevant topic for our purposes invovles passive sensing, which can be preformed remotely by a malicious party.
-
-A 2020 paper from UCSB [5] uses passive sensing of ambient WiFi signals to detect humans. It does not need any prior knowledge of the WiFi network or devices (including location). Detection rates varied from 86.6-99.9% depending on the number of anchors. Additionally, work has been done to develop new signal processing algorithms for Ambient Assisted Living Applications (AAL) [6]. In this case, time spent in active state by the sensor signal as the best indication of movement intensity. 
+A more relevant topic for our purposes invovles passive sensing, which can be preformed remotely by a malicious party. A 2020 paper from UCSB [5] uses passive sensing of ambient WiFi signals to detect humans. It does not need any prior knowledge of the WiFi network or devices (including location). Detection rates varied from 86.6-99.9% depending on the number of anchors. Additionally, work has been done to develop new signal processing algorithms for Ambient Assisted Living Applications (AAL) [6]. In this case, time spent in active state by the sensor signal as the best indication of movement intensity. 
 
 Similar work has also been done on wireless snooping in heavily connected smart homes. Srinivasan et al. [7] presented the Fingerprint and Timing-based Snooping (FATS) attack, which eavesdrops on the wireless transmission of various sensors in a home to classify activities such as cooking, showering, or sleeping. This attack uses wireless fingerprinting and temporal data to cluster sensors by room and make tiered predictions. Various methods to defend against this attack are also presented, including signal attenuation, random delays, and fingerprint masking.
 
@@ -69,6 +65,16 @@ After a sufficient number of data samples was collected, we were able to use the
 ### Pipeline
 
 ### Results and Evaluation
+![bath](https://github.com/ciankc/209/figures/bath.png)
+
+![bed](https://github.com/ciankc/209/figures/bed.png)
+
+![kitch](https://github.com/ciankc/209/figures/kit.png)
+
+![living](https://github.com/ciankc/209/figures/living.png)
+
+![office](https://github.com/ciankc/209/figures/office.png)
+
 
 ### Limitations and Future Directions
 One key limitation with this implementation is the lack of support and limited documentation for OpenSHS. The simulator does function, but it was last updated in 2018. Additionally, the most recent version of Blender discontinued the use of the Blender Game Engine, which is required for performing these simulations. Version 2.79 of Blender still supports the game engine. 
